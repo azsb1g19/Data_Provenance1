@@ -1,5 +1,5 @@
-from new_queries import create_mongo_pandas
-from visualization import myapp_no_main
+from .new_queries import create_mongo_pandas
+from .visualization import myapp_no_main
 
 def run(dbname, filepath):
     print('run')

@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../')
 
-from visualization.get_item_history_for_record_history import get_item_history, node_list_to_json, search_activity_with_feature
+from .get_item_history_for_record_history import get_item_history, node_list_to_json, search_activity_with_feature
 
 SEPARATOR = '^^'
 

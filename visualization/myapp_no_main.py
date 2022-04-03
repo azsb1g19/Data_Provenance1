@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 import pymongo
 import sys
-from visualization.item_history_bfs import get_item_history
-from visualization.record_history import get_record_operation
+from .item_history_bfs import get_item_history
+from .record_history import get_record_operation
 import time
 app = Flask(__name__)
 @app.route("/")
