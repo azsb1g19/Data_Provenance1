@@ -5,7 +5,7 @@ import os
 import time
 import json
 from multiprocessing import Process, Queue
-from ...src.run import run2 
+from ...run import run2 
 import pymongo
 
 # global variables for multiprocessing operations
