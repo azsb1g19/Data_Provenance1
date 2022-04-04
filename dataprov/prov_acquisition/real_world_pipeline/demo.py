@@ -8,7 +8,7 @@ import time
 import os
 from prov_acquisition.prov_libraries import ProvenanceTracker
 import numpy as np
-from src.run import run
+from ...run import run
 
 
 def main():
