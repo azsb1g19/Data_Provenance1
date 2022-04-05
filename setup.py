@@ -6,7 +6,7 @@ setup(
     description='A python library for collecting data provenance in pre-processing pipelines which use pandas DataFrames',
     url='',
     author='Luca Lauro, Giulia Simonelli',
-    packages=['dataprov','dataprov.prov_acquisition','dataprov.prov_acquisition.prov_libraries','dataprov.prov_acquisition.real_world_pipeline','dataprov.visualization'],
+    packages=['dataprov','dataprov.prov_acquisition','dataprov.prov_acquisition.prov_libraries','dataprov.prov_acquisition.real_world_pipeline','dataprov.visualization','dataprov.new_queries'],
     install_requires=[  "click==7.1.2",
                         "Flask==1.1.2",
                         "itsdangerous==1.1.0",

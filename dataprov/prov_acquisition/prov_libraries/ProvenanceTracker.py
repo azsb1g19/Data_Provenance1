@@ -1,5 +1,5 @@
 from . import logic_tracker
-import provenance_new as pr
+from . import provenance_new
 import pandas as pd
 import numpy as np
 import time
@@ -28,7 +28,7 @@ class ProvenanceTracker:
         #
         self._df = New_df(initial_df)
         self._copy_df=New_df(initial_df.copy())
-        self.provenance_obj = pr.Provenance(initial_df, db_name, save_path)
+        self.provenance_obj = provenance_new.Provenance(initial_df, db_name, save_path)
         self.second_df = []
         global global_tracker
         global_tracker = self
