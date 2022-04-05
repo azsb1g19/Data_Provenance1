@@ -1,4 +1,5 @@
 from . import logic_tracker
+import provenance_new as pr
 import pandas as pd
 import numpy as np
 import time
@@ -18,15 +19,16 @@ class ProvenanceTracker:
     """
     Class that tracks pandas operations
     """
-    def __init__(self, initial_df, provenance_obj):
+    def __init__(self, initial_df, db_name, save_path):
         """
         initial_df: starting pandas dataframe
-        provenance_obj: provenance object that contains provenance methods
+        db_name: name of database
+        save_path: directory path to save files
         """
         #
         self._df = New_df(initial_df)
         self._copy_df=New_df(initial_df.copy())
-        self.provenance_obj = provenance_obj
+        self.provenance_obj = pr.Provenance(initial_df, db_name, save_path)
         self.second_df = []
         global global_tracker
         global_tracker = self

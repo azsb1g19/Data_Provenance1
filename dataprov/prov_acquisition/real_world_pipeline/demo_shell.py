@@ -34,11 +34,8 @@ def main(dbname):
                         'F': ['F0', 'F1', 'F2', 'F3', 'F4']
                         })
     print('[' + time.strftime("%d/%m-%H:%M:%S") + '] Initialization')
-    # Create a new provenance document
-
-    p = pr.Provenance(df, savepath)
     # create provanance tracker
-    tracker=ProvenanceTracker.ProvenanceTracker(df, p)
+    tracker=ProvenanceTracker.ProvenanceTracker(df, p, '', savepath)
     # add second df to tracker for join or union operation, provenance of second df is not tracked
     tracker.add_second_df(right)
     # add used column for next instance generation
