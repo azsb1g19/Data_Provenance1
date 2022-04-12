@@ -1,6 +1,7 @@
 # DataProvenance Visualization
 App for visualize the data provenance 
 
+## MongoDB Required on Target Machine
 
 ## Needed Libraries
 * [flask](https://flask.palletsprojects.com/en/1.1.x/)
@@ -9,9 +10,11 @@ App for visualize the data provenance
 ## Used Libraries for visualization
 * dagre
 * dagre-d3
-## Execution
 
-From terminal, in the folder of the app launch `python3 myapp.py db_name`
+## Execution
+Execute any of the .py files in prov_acquisition
+
+(For just visualisation app, from terminal, in the folder of the app launch `python3 myapp.py db_name`)
 
 In the browser the app can be accessed on the address `localhost:5000`
 

@@ -11,19 +11,10 @@ App for capture and visualize data provenance
 ## Used Libraries for visualization
 * dagre
 * dagre-d3
-## Execution
 
-
-1. To execute the demo pipeline:
-    * In terminal go in the folder *prov_acquisition/*
-    * Execute the file with the command `python3 real_world_pipeline/demo_shell.py` followed by the name of the collection to be created in Mongo DB `dbname`.
-    Example:, **python3 real_world_pipeline/demo_shell.py demo**
-    
-   
 The result will be stored in the folder *prov_acquisition/prov_results/<dataset_name>* and loaded in Mongo.
 
-After the result has been uploded in MongoDB the visualization app will available at the address **localhost:5000**
-
+After the result has been uploaded in MongoDB they can be found in MongoDB Compas at localhost:27017
 
 
 ## Execute only the visualization app

@@ -3,3 +3,5 @@ __pycache__
 debug.log
 build
 dataprov.egg-info
+dataprov/prov_acquisition/other_pipeline/Results/*
+dataprov/prov_acquisition/real_world_pipeline/Results/*

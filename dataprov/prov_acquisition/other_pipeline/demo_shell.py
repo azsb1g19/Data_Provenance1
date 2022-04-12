@@ -4,16 +4,16 @@
 import sys
 
 sys.path.append('../')
-from prov_acquisition.prov_libraries import provenance_new as pr
+from dataprov.prov_acquisition.prov_libraries import provenance_new as pr
 import pandas as pd
 import time
 import argparse
 import os
-from prov_acquisition.prov_libraries import ProvenanceTracker
+from dataprov.prov_acquisition.prov_libraries import ProvenanceTracker
 import numpy as np
-from ...run import run
-def main(dbname):
-    output_path = 'prov_results'
+from dataprov.run import run
+def main(dbname=''):
+    output_path = 'dataprov/prov_acquisition/other_pipeline/Results/demo_shell'
 
     # Specify where to save the processed files as savepath
     savepath = os.path.join(output_path, 'demo')
@@ -63,18 +63,17 @@ def main(dbname):
     # Imputation 2
     tracker.df = tracker.df.fillna('imputato')
     # One hot encoding
-    c='D'
     dummies = []
-    dummies.append(pd.get_dummies(tracker.df[c]))
+    dummies.append(pd.get_dummies(pd.DataFrame(tracker.df, columns=['D','C'])))
     df_dummies = pd.concat(dummies, axis=1)
     tracker.df = pd.concat((tracker.df, df_dummies), axis=1)
-    # sto space transformation explicitiing the derivation column(automatic if D was dropped)
-    tracker.stop_space_prov('D')
+    # stop space transformation explicitiing the derivation column(automatic if D was dropped)
+    tracker.stop_space_prov(['D','C'])
     print(tracker.df)
     run(dbname,savepath)
 if __name__ == '__main__':
     if len(sys.argv) == 2 :
         main(sys.argv[1])
     else:
-        print('[ERROR] usage: demo_shell.py <db_name> ')
+        main()
 
