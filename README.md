@@ -17,7 +17,7 @@ The result will be stored in the folder *prov_acquisition/prov_results/<dataset_
 After the result has been uploaded in MongoDB they can be found in MongoDB Compas at localhost:27017
 
 
-## Execute only the visualization app
+## Execute the visualization app
 
 From terminal, in the folder of the app launch `python3 myapp.py db_name`
 
