@@ -1,0 +1,8 @@
+db_1_name,db_2_name,average_similarity,similarity_of_entities,similarity_of_activities,similarity_of_derivations,similarity_of_relations
+left_join_py_db,left_join_knime_db,100.0,100.0,100.0,100.0,100.0
+right_join_py_db,right_join_knime_db,100.0,100.0,100.0,100.0,100.0
+inner_join_py_db,inner_join_knime_db,100.0,100.0,100.0,100.0,100.0
+outer_join_py_db,outer_join_knime_db,100.0,100.0,100.0,100.0,100.0
+cross_join_py_db,cross_join_knime_db,45.83333333333333,33.33333333333333,0.0,100.0,50.0
+german_py_db,german_knime_db,97.87504171343627,98.82352941176471,100.0,99.81949458483754,92.85714285714286
+compas_py_db,compas_knime_db,100.0,100.0,100.0,100.0,100.0
