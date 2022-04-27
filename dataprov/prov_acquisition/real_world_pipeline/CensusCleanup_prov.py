@@ -21,11 +21,11 @@ def main(opt):
 
 	# create provenance tracker
 	tracker=ProvenanceTracker.ProvenanceTracker(df, '', savepath)
+	tracker.df.to_csv(os.path.join(prog_dir, 'temp.csv'))
 
 	print('[' + time.strftime("%d/%m-%H:%M:%S") +'] Initialization')
 	
 	#OPERATION 0
-	print("0")
 	tracker.set_description('Cleanup names from spaces')
 	col = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country', 'label']
 
@@ -35,12 +35,10 @@ def main(opt):
 	tracker.df = df
 
 	#OPERATION 1
-	print("1")
-	tracker.set_description('Replace ? character for NaN value')
-	tracker.df = tracker.df.replace('?', np.nan)
+	#tracker.set_description('Replace ? character for NaN value')
+	#tracker.df = tracker.df.replace('?', np.nan)
 
 	#OPERATION 2-3
-	print("2-3")
 	tracker.set_description('One-hot encode categorical variables')
 	dummies = []
 	dummies.append(pd.get_dummies(pd.DataFrame(tracker.df, columns=['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'native-country'])))
@@ -59,7 +57,6 @@ def main(opt):
 	tracker.df = df
 
 	#OPERATION 5
-	print("5")
 	tracker.set_description('Drop fnlwgt variable')
 	tracker.df = tracker.df.drop(columns=['fnlwgt'], axis=1)
 

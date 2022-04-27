@@ -58,6 +58,7 @@ def main(opt):
 	                                          np.where(df.personal_status == 'A95', 'single',
 	                                                   'married'))))
 
+	tracker.df = df
 	tracker.set_description('Translate gender values')
 	df['gender'] = np.where(df.personal_status == 'A92', 0,
 	                        np.where(df.personal_status == 'A95', 0,

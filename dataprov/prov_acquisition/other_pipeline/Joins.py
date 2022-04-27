@@ -19,32 +19,32 @@ if __name__ == '__main__':
     tracker.set_description("Left Join on Column B")
     tracker.add_second_df(df_b)
     tracker.df = tracker.df.merge(df_b, on='B', how='left')
-    create_mongo_pandas.main('left_join_py_db', savepath)
+    create_mongo_pandas.main('left_join_py_db', os.path.join(savepath, 'left_join'))
 
     #right join
     tracker=ProvenanceTracker.ProvenanceTracker(df_a, '', os.path.join(savepath, 'right_join'))
     tracker.set_description("Right Join on Column B")
     tracker.add_second_df(df_b)
     tracker.df = tracker.df.merge(df_b, on='B', how='right')
-    create_mongo_pandas.main('right_join_py_db', savepath)
+    create_mongo_pandas.main('right_join_py_db', os.path.join(savepath, 'right_join'))
 
     #inner join
     tracker=ProvenanceTracker.ProvenanceTracker(df_a, '', os.path.join(savepath, 'inner_join'))
     tracker.set_description("Inner Join on Column B")
     tracker.add_second_df(df_b)
     tracker.df = tracker.df.merge(df_b, on='B', how='inner')
-    create_mongo_pandas.main('inner_join_py_db', savepath)
+    create_mongo_pandas.main('inner_join_py_db', os.path.join(savepath, 'inner_join'))
 
     #full outer join
     tracker=ProvenanceTracker.ProvenanceTracker(df_a, '', os.path.join(savepath, 'full_outer_join'))
     tracker.set_description("Full Outer Join")
     tracker.add_second_df(df_b)
     tracker.df = tracker.df.merge(df_b, how='outer')
-    create_mongo_pandas.main('oute_join_py_db', savepath)
+    create_mongo_pandas.main('outer_join_py_db', os.path.join(savepath, 'full_outer_join'))
 
     #cross join
     tracker=ProvenanceTracker.ProvenanceTracker(df_a, '', os.path.join(savepath, 'cross_join'))
     tracker.set_description("Cross Join")
     tracker.add_second_df(df_b)
     tracker.df = tracker.df.merge(df_b, how='cross')
-    create_mongo_pandas.main('cross_join_py_db', savepath)
+    create_mongo_pandas.main('cross_join_py_db', os.path.join(savepath, 'cross_join'))
